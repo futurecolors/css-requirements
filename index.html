@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Требования к вёрстке. Future Colors</title>
+
+    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet"/>
+    <link href="css/css-requirements.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<section class="requirements container">
+    <h1>Требования к вёрстке</h1>
+
+    <h2>Общие требования к именованию классов</h2>
+
+    <h3>HTML разметка</h3>
+
+    <article class="requirements-section row">
+        <div class="requirements-section__text col-sm-6">
+            <ul>
+                <li>Для разметки можно использовать теги HTML5.</li>
+                <li>Значения всех атрибутов должны быть заключены в кавычки (").</li>
+                <li>Форматирование HTML иерархическое, отступ — 4 пробела.</li>
+                <li>Если нужно избежать пробелов между тегами, между ними вставляется HTML-комментарий.</li>
+            </ul>
+        </div>
+    </article>
+
+    <h3>Именование классов</h3>
+
+    <article class="requirements-section row">
+        <div class="requirements-section__text col-sm-6">
+            <p>
+                Именование классов должно вестись в терминологии "БЭМ":http://ru.bem.info/method/definitions/
+            </p>
+            <p>
+                Схема именования:
+            </p>
+            <pre>.block
+.block_mod_value
+.block__element
+.block__element_mod_value</pre>
+        </div>
+    </article>
+
+    <h3>Использование префиксов</h3>
+
+    <article class="requirements-section row">
+        <div class="requirements-section__text col-sm-6">
+            <p>
+                Использовать префиксы разрешается в редких случаях для обозначения
+            </p>
+            <ul>
+                <li>общих / служебных / глобальных классов (например, .g-content и .g-clearfix),</li>
+                <li>служебных классов для JS (например, .js-button)</li>
+            </ul>
+        </div>
+    </article>
+
+    <h3>Семантика именования классов</h3>
+
+    <article class="requirements-section row">
+        <div class="requirements-section__text col-sm-6">
+            <p>
+                Названия блоков и элементов должны соответствовать их назначению и функции, а не тому, как они
+                отображаются.
+            </p>
+            <p>
+                Если блоки выполняют разные функции, но выглядят одинаково, их нужно оформить как один блок с нейтральным
+                названием, отражающим их сходство. Нет излишнему дублированию кода.
+            </p>
+        </div>
+        <div class="requirements-section__example col-md-3 col-sm-6">
+            плохо
+            <pre>.col-3 {}</pre>
+        </div>
+        <div class="requirements-section__example col-md-3 col-sm-6">
+            хорошо
+            <pre>.header {}</pre>
+        </div>
+    </article>
+
+    <h3>Применение каскада</h3>
+
+    <article class="requirements-section row">
+        <div class="requirements-section__text col-sm-6">
+            <p>
+                Каскад стилей должен быть сведён к минимуму. Он допускается, в частности, в случае, когда нужно оформить
+                редактируемый в wysiwyg контент; этот контент по возможности должен не содержать классов.
+            </p>
+        </div>
+        <div class="requirements-section__example col-md-3 col-sm-6">
+            <pre>.g-content p {}
+.g-content table {}</pre>
+        </div>
+    </article>
+
+    <h2>Требования к стилям</h2>
+
+    <h3>Форматирование стилей</h3>
+
+    <article class="requirements-section row">
+        <div class="requirements-section__text col-sm-6">
+            <p>
+                Каждое правило должно располагаться в начале новой строки.
+                После правила следует пробел, фигурная скобка, далее на новых строках правила и закрывающая фигурная скобка
+                на новой строке.
+                У свойства после названия двоеточие, пробел, затем значение.
+                Отступы - 4 пробела.
+            </p>
+        </div>
+        <div class="requirements-section__example col-md-3 col-sm-6">
+            плохо
+            <pre>.article, h1{
+color:#777;}</pre>
+        </div>
+        <div class="requirements-section__example col-md-3 col-sm-6">
+            хорошо
+            <pre>.article,
+h1 {
+    color: #777;
+}</pre>
+        </div>
+    </article>
+
+    <h3>Константы</h3>
+
+    <article class="requirements-section row">
+        <div class="requirements-section__text col-sm-6">
+            <p>
+                Предпочтительно использование сокращённых форм записи констант:
+            </p>
+            <ul>
+                <li>#777 вместо #777777,</li>
+                <li>0 вместо 0px,</li>
+                <li>padding: 0 10px 5px вместо padding: 0 10px 5px 10px</li>
+            </ul>
+            <p>
+                и т.д.
+            </p>
+        </div>
+    </article>
+
+    <h3>Порядок CSS-свойств</h3>
+
+    <article class="requirements-section row">
+        <div class="requirements-section__text col-sm-6">
+            <p>
+                Приблизительная схема расположения свойств:
+            </p>
+            <pre>{
+    Позиционирование
+    Параметры блока
+    Размеры
+    Таблицы / списки
+    Свойства текста
+    Шрифт
+    Цвет
+}</pre>
+        </div>
+        <div class="requirements-section__example col-md-3 col-sm-6">
+            плохо
+            <pre>.article {
+    color: #777;
+    font-size: 16px;
+    font-style: italic;
+    line-height: 30px;
+    left: 0;
+    margin-top: -30px;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    width: 100%;
+}</pre>
+        </div>
+        <div class="requirements-section__example col-md-3 col-sm-6">
+            хорошо
+            <pre>.article {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    margin-top: -30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 16px;
+    font-style: italic;
+    color: #777;
+}</pre>
+        </div>
+    </article>
+
+    <h2>Расположение по файлам</h2>
+
+    <article class="requirements-section row">
+        <div class="requirements-section__text col-sm-6">
+            <p>
+                Стили, принадлежащие одному блоку, должны следовать друг за другом:
+                сначала блок, потом его модификаторы (также переопределения для IE, для отключённого JS и т.п.), затем
+                элементы и их модификаторы.
+            </p>
+            <p>
+                Стили для IE задаются с помощью классов. Правило с хаком должно следовать непосредственно за оригинальным
+                правилом.
+            </p>
+            <p>
+                CSS должен быть разбит по файлам. В каждом файле должны содержаться стили одного или нескольких родственных
+                блоков.
+            </p>
+        </div>
+        <div class="requirements-section__example col-md-3 col-sm-6">
+            <pre>.article__header {
+    // ...
+}
+.article__header:hover {
+    // ...
+}
+.ie8 .article__header {
+    // ...
+}</pre>
+        </div>
+    </article>
+
+    <h2>Использование CSS-препроцессоров</h2>
+
+    <h3>Применение</h3>
+
+    <article class="requirements-section row">
+        <div class="requirements-section__text col-sm-6">
+            <p>
+                Допускается использование "less":http://lesscss.org/.
+            </p>
+            <p>
+                Каждый css-класс должен являться отдельным определением за исключением состояний, псевдоэлементов, media
+                queries и т.п.
+            </p>
+            <p>
+                Следует использовать переменные, примеси (аккуратно), функции.
+            </p>
+        </div>
+        <div class="requirements-section__example col-md-3 col-sm-6">
+            плохо
+            <pre>.article {
+    // ...
+    &__header {
+        // ...
+    }
+}</pre>
+        </div>
+        <div class="requirements-section__example col-md-3 col-sm-6">
+            хорошо
+            <pre>.article {
+    // ...
+
+    &:hover {
+        // ...
+    }
+}
+.article__header {
+    // ...
+}</pre>
+        </div>
+    </article>
+
+    <h3>Организация less-кода</h3>
+
+    <article class="requirements-section row">
+        <div class="requirements-section__text col-sm-6">
+            <ul>
+                <li>При использовании less правила организации файлов такие же, как и для обычного css.</li>
+                <li>
+                    Общие используемые переменные и миксины должны быть вынесены в отдельные файлы и подключаться по мере
+                    необходимости.
+                </li>
+                <li>Переменные для одного блока должны объявляться непосредственно перед ним.</li>
+                <li>Переменные и миксины должны быть названы в формате @header-height: 80px; .inline-block() {}</li>
+                <li>Подключение стилей на сайт должно осуществляться через один less-файл</li>
+            </ul>
+        </div>
+        <div class="requirements-section__example col-md-3 col-sm-6">
+    <pre>header.less
+
+footer.less
+
+project.less
+    @import "header";
+    @import "footer";</pre>
+        </div>
+    </article>
+
+    <h2>Дополнительные ссылки</h2>
+
+    <article class="requirements-section row">
+        <div class="requirements-section__text col-sm-6">
+            <ul class="list-unstyled">
+                <li>
+                    <a href="http://bem.info">БЭМ</a>
+                </li>
+                <li>
+                    <a href="http://blog.futurecolors.ru/2012/05/b-left-b-right.html">.b-left или .b-right?</a>
+                </li>
+            </ul>
+        </div>
+    </article>
+</section>
+</body>
+</html>
+
+

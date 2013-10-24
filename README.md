@@ -1,4 +1,2 @@
-css-requirements
-================
-
-Требования к вёрстке
+http://futurecolors.github.io/css-requirements/
+===============================================
