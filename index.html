@@ -12,7 +12,10 @@
 </head>
 <body>
 <section class="requirements container">
-    <h1>Требования к вёрстке</h1>
+    <h1>
+        Требования к вёрстке.
+        <span class="text-muted">Future Colors</span>
+    </h1>
 
     <h2>Общие требования к именованию классов</h2>
 
@@ -20,7 +23,7 @@
 
     <article class="requirements-section row">
         <div class="requirements-section__text col-sm-6">
-            <ul>
+            <ul class="mdashed-list">
                 <li>Для разметки можно использовать теги HTML5.</li>
                 <li>Значения всех атрибутов должны быть заключены в кавычки (").</li>
                 <li>Форматирование HTML иерархическое, отступ — 4 пробела.</li>
@@ -34,15 +37,18 @@
     <article class="requirements-section row">
         <div class="requirements-section__text col-sm-6">
             <p>
-                Именование классов должно вестись в терминологии "БЭМ":http://ru.bem.info/method/definitions/
+                Именование классов должно вестись в терминологии БЭМ.
             </p>
             <p>
                 Схема именования:
             </p>
-            <pre>.block
+            <pre class="requirements-section__formatted">.block
 .block_mod_value
 .block__element
 .block__element_mod_value</pre>
+        </div>
+        <div class="requirements-section__example col-sm-4 col-sm-offset-2">
+            <a href="http://ru.bem.info/method/definitions/">ru.bem.info/method/definitions/</a>
         </div>
     </article>
 
@@ -53,7 +59,7 @@
             <p>
                 Использовать префиксы разрешается в редких случаях для обозначения
             </p>
-            <ul>
+            <ul class="mdashed-list">
                 <li>общих / служебных / глобальных классов (например, .g-content и .g-clearfix),</li>
                 <li>служебных классов для JS (например, .js-button)</li>
             </ul>
@@ -73,13 +79,13 @@
                 названием, отражающим их сходство. Нет излишнему дублированию кода.
             </p>
         </div>
-        <div class="requirements-section__example col-md-3 col-sm-6">
-            плохо
-            <pre>.col-3 {}</pre>
+        <div class="requirements-section__example requirements-section__example_type_bad col-md-2 col-sm-4 col-sm-offset-2 col-md-offset-2">
+            <div class="requirements-section__example-header">Плохо</div>
+            <pre class="requirements-section__example-formatted">.col-3 {}</pre>
         </div>
-        <div class="requirements-section__example col-md-3 col-sm-6">
-            хорошо
-            <pre>.header {}</pre>
+        <div class="requirements-section__example requirements-section__example_type_good col-md-2 col-sm-4 col-sm-offset-2 col-md-offset-0">
+            <div class="requirements-section__example-header">Хорошо</div>
+            <pre class="requirements-section__example-formatted">.header {}</pre>
         </div>
     </article>
 
@@ -92,8 +98,8 @@
                 редактируемый в wysiwyg контент; этот контент по возможности должен не содержать классов.
             </p>
         </div>
-        <div class="requirements-section__example col-md-3 col-sm-6">
-            <pre>.g-content p {}
+        <div class="requirements-section__example col-md-2 col-sm-4 col-sm-offset-2 col-md-offset-2">
+            <pre class="requirements-section__example-formatted">.g-content p {}
 .g-content table {}</pre>
         </div>
     </article>
@@ -112,14 +118,14 @@
                 Отступы - 4 пробела.
             </p>
         </div>
-        <div class="requirements-section__example col-md-3 col-sm-6">
-            плохо
-            <pre>.article, h1{
-color:#777;}</pre>
+        <div class="requirements-section__example requirements-section__example_type_bad col-md-2 col-sm-4 col-sm-offset-2 col-md-offset-2">
+            <div class="requirements-section__example-header">Плохо</div>
+            <pre class="requirements-section__example-formatted">.article, h1{
+    color:#777;}</pre>
         </div>
-        <div class="requirements-section__example col-md-3 col-sm-6">
-            хорошо
-            <pre>.article,
+        <div class="requirements-section__example requirements-section__example_type_good col-md-2 col-sm-4 col-sm-offset-2 col-md-offset-0">
+            <div class="requirements-section__example-header">Хорошо</div>
+            <pre class="requirements-section__example-formatted">.article,
 h1 {
     color: #777;
 }</pre>
@@ -133,7 +139,7 @@ h1 {
             <p>
                 Предпочтительно использование сокращённых форм записи констант:
             </p>
-            <ul>
+            <ul class="mdashed-list">
                 <li>#777 вместо #777777,</li>
                 <li>0 вместо 0px,</li>
                 <li>padding: 0 10px 5px вместо padding: 0 10px 5px 10px</li>
@@ -151,7 +157,7 @@ h1 {
             <p>
                 Приблизительная схема расположения свойств:
             </p>
-            <pre>{
+            <pre class="requirements-section__formatted">{
     Позиционирование
     Параметры блока
     Размеры
@@ -161,9 +167,9 @@ h1 {
     Цвет
 }</pre>
         </div>
-        <div class="requirements-section__example col-md-3 col-sm-6">
-            плохо
-            <pre>.article {
+        <div class="requirements-section__example requirements-section__example_type_bad col-md-2 col-sm-4 col-sm-offset-2 col-md-offset-2">
+            <div class="requirements-section__example-header">Плохо</div>
+            <pre class="requirements-section__example-formatted">.article {
     color: #777;
     font-size: 16px;
     font-style: italic;
@@ -176,9 +182,9 @@ h1 {
     width: 100%;
 }</pre>
         </div>
-        <div class="requirements-section__example col-md-3 col-sm-6">
-            хорошо
-            <pre>.article {
+        <div class="requirements-section__example requirements-section__example_type_good col-md-2 col-sm-4 col-sm-offset-2 col-md-offset-0">
+            <div class="requirements-section__example-header">Хорошо</div>
+            <pre class="requirements-section__example-formatted">.article {
     position: absolute;
     top: 50%;
     left: 0;
@@ -211,8 +217,8 @@ h1 {
                 блоков.
             </p>
         </div>
-        <div class="requirements-section__example col-md-3 col-sm-6">
-            <pre>.article__header {
+        <div class="requirements-section__example col-md-2 col-sm-4 col-sm-offset-2 col-md-offset-2">
+            <pre class="requirements-section__example-formatted">.article__header {
     // ...
 }
 .article__header:hover {
@@ -231,7 +237,7 @@ h1 {
     <article class="requirements-section row">
         <div class="requirements-section__text col-sm-6">
             <p>
-                Допускается использование "less":http://lesscss.org/.
+                Допускается использование LESS.
             </p>
             <p>
                 Каждый css-класс должен являться отдельным определением за исключением состояний, псевдоэлементов, media
@@ -241,18 +247,21 @@ h1 {
                 Следует использовать переменные, примеси (аккуратно), функции.
             </p>
         </div>
-        <div class="requirements-section__example col-md-3 col-sm-6">
-            плохо
-            <pre>.article {
+        <div class="requirements-section__example col-sm-4 col-sm-offset-2">
+            <a href="http://lesscss.org/">lesscss.org</a>
+        </div>
+        <div class="requirements-section__example requirements-section__example_type_bad col-md-2 col-sm-4 col-sm-offset-2 col-md-offset-2">
+            <div class="requirements-section__example-header">Плохо</div>
+            <pre class="requirements-section__example-formatted">.article {
     // ...
     &__header {
         // ...
     }
 }</pre>
         </div>
-        <div class="requirements-section__example col-md-3 col-sm-6">
-            хорошо
-            <pre>.article {
+        <div class="requirements-section__example requirements-section__example_type_good col-md-2 col-sm-4 col-sm-offset-2 col-md-offset-0">
+            <div class="requirements-section__example-header">Хорошо</div>
+            <pre class="requirements-section__example-formatted">.article {
     // ...
 
     &:hover {
@@ -269,7 +278,7 @@ h1 {
 
     <article class="requirements-section row">
         <div class="requirements-section__text col-sm-6">
-            <ul>
+            <ul class="mdashed-list">
                 <li>При использовании less правила организации файлов такие же, как и для обычного css.</li>
                 <li>
                     Общие используемые переменные и миксины должны быть вынесены в отдельные файлы и подключаться по мере
@@ -280,8 +289,8 @@ h1 {
                 <li>Подключение стилей на сайт должно осуществляться через один less-файл</li>
             </ul>
         </div>
-        <div class="requirements-section__example col-md-3 col-sm-6">
-    <pre>header.less
+        <div class="requirements-section__example col-md-2 col-sm-4 col-sm-offset-2 col-md-offset-2">
+    <pre class="requirements-section__example-formatted">header.less
 
 footer.less
 
@@ -297,10 +306,10 @@ project.less
         <div class="requirements-section__text col-sm-6">
             <ul class="list-unstyled">
                 <li>
-                    <a href="http://bem.info">БЭМ</a>
+                    <a class="link" href="http://bem.info">БЭМ</a>
                 </li>
                 <li>
-                    <a href="http://blog.futurecolors.ru/2012/05/b-left-b-right.html">.b-left или .b-right?</a>
+                    <a class="link" href="http://blog.futurecolors.ru/2012/05/b-left-b-right.html">b-left или b-right?</a>
                 </li>
             </ul>
         </div>
