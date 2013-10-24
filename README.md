@@ -1,2 +1,1 @@
-http://futurecolors.github.io/css-requirements/
-===============================================
+###[Требования к вёрстке. Future Colors](http://futurecolors.github.io/css-requirements/)###

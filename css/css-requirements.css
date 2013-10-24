@@ -13,6 +13,13 @@
  */
 
 .requirements-section {}
+.requirements-section_required_yes {
+    margin-top: -5px;
+    margin-bottom: -5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background: #ffffc4;
+}
 .requirements-section__text {
     font-size: 16px;
 }
