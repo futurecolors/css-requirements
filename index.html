@@ -28,6 +28,7 @@
                 <li>Значения всех атрибутов должны быть заключены в кавычки (").</li>
                 <li>Форматирование HTML иерархическое, отступ — 4 пробела.</li>
                 <li>Если нужно избежать пробелов между тегами, между ними вставляется HTML-комментарий.</li>
+                <li>Не допускается использование тега &lt;p&gt; кроме фрагментов вёрстки редактируемых через WYSIWYG.</li>
             </ul>
         </div>
     </article>
@@ -105,6 +106,19 @@
     </article>
 
     <h2>Требования к стилям</h2>
+
+    <h3>Базовый CSS</h3>
+
+    <article class="requirements-section row">
+        <div class="requirements-section__text col-sm-6">
+            <p>
+                Сброс стилей должен осуществляться с помощью normalize.css
+            </p>
+        </div>
+        <div class="requirements-section__example col-sm-4 col-sm-offset-2">
+            <a class="link" href="http://necolas.github.io/normalize.css/">normalize.css</a>
+        </div>
+    </article>
 
     <h3>Форматирование стилей</h3>
 
